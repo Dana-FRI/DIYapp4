@@ -25,7 +25,8 @@ This app is extremely basic and doesn't include a comprehensive amount of questi
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
-	
+
+
    <head>  
       <title>Do you have COVID-19?</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,8 +34,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
 
+	
 
 	<script>
+// DANA'S COMMENT: i'm thinking that it will be var covidyes_count, and var covidno_count and define the functions that way OR it will be the FLU versus CORONA, I will have to find symtpoms that are not so close to each other in order to make that distinction 
+
 	var allergy_count = 0; // creates a variable known as allergy_count and stores the initial value as zero (tally of symptoms leaning towards allergy diagnosis)
         var cold_count = 0; // creates a variable known as cold_count and stores the initial value as zero. (tally of symptoms leaning towards cold diagnosis)
 	var resultText = document.getElementById("results"); // creates variable for our actual final result
@@ -43,7 +47,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		allergy_count = allergy_count + 1; // this function will help us add one each time a symptom is linked to allergies.
 		
         }
-
+// DANA'S COMMENT: i'm trying to come up with questions for my code - i'm thinking of doing the COVID-19 pandemic, answering 4 different types of questions - have to be able to distinguish between the flu and corona - which is hard because they are similar 
         function coldAdd(){
 		cold_count = cold_count + 1; // this function will help us add one each time a symptom is linked to cold.
         }
