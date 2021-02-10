@@ -33,35 +33,50 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css">
-
+   </head>
+<!-- dana - did this to close the header as it wasn't initially closed, it was but it was further down I'd rather keep it up here -->
+   
 	
-	<script>
-// DANA'S COMMENT: i'm thinking that it will be var covidyes_count, and var covidno_count and define the functions that way OR it will be the FLU versus CORONA, I will have to find symtpoms that are not so close to each other in order to make that distinction 
+<script>
+// dana - i'm thinking that it will be var covidyes_count, and var covidno_count and define the functions that way OR it will be the FLU versus CORONA, I will have to find symtpoms that are not so close to each other in order to make that distinction 
 
 	var covid_count = 0; // creates a variable known as allergy_count and stores the initial value as zero (tally of symptoms leaning towards allergy diagnosis)
         var flu_count = 0; // creates a variable known as cold_count and stores the initial value as zero. (tally of symptoms leaning towards cold diagnosis)
-	var resultText = document.getElementById("results"); // creates variable for our actual final result
+	
+
+	// dana -changing the order of this (putting it further down) var resultText = document.getElementById("results"); // creates variable for our actual final result
 
         function covidAdd(){
 		covid_count = covid_count + 1; // this function will help us add one each time a symptom is linked to allergies.
+		alert(covid_count); // added this alert as well just in case
 		
-        }
-// DANA'S COMMENT: i'm trying to come up with questions for my code - i'm thinking of doing the COVID-19 pandemic, answering 4 different types of questions - have to be able to distinguish between the flu and corona - which is hard because they are similar 
-        function fluAdd(){
+        }; // dana - I added the semi-colon just for structure, it helped with my last app 3 so i'm using it again
+	   // dana - i'm trying to come up with questions for my code - i'm thinking of doing the COVID-19 pandemic, answering 4 different types of questions - have to be able to distinguish between the flu and corona - which is hard because they are similar 
+        
+	function fluAdd(){
 		flu_count = flu_count + 1; // this function will help us add one each time a symptom is linked to cold.
-        }
-	var allergyPercent=0; // initial value for variable of allergy in  percentage form
-	var coldPercent=0; // initial value for variable of cold in  percentage form
-	function results(){ // function that allows us to get our final result
-		var allergyPercent= allergy_count/ (allergy_count + cold_count) * 100; // a variable to create percent likelihood of allergies
-		var coldPercent= cold_count/ (allergy_count+ cold_count)* 100; // a variable to create percent likelihood of cold
-		var resultText = document.getElementById("results"); // 
-		resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%<br> Probability it is a cold =" + coldPercent + "%"; 
+		alert(flu_count); // dana - once again added this alert to fimiliarize the code to pop-out what I need it to
+		
+        };
+	
+	function ResultPercentage(){ // dana - make sure consistent with code at the bottom 	
+	var covidPercent = (cold_count/4) * 100; 
+	var fluPercent = (allergy_count/4) * 100;
+	var resultText = document.getElementById("results")
+	resultText.innerHTML = "Probability it is Covid-19 =" + covidPercent + "%<br> Probability it is a flu =" + fluPercent + "%"; 
 
-        }
-  	</script>
-</head> 
+	// dana - var allergyPercent=0; // initial value for variable of allergy in  percentage form
+	// dana - var coldPercent=0; // initial value for variable of cold in  percentage form
+	// dana - I just took this out and decided to make it more personliazed by changing the name, function results(){ // function that allows us to get our final result
+		// dana - var allergyPercent= allergy_count/ (allergy_count + cold_count) * 100; // a variable to create percent likelihood of allergies
+		// dana - var coldPercent= cold_count/ (allergy_count+ cold_count)* 100; // a variable to create percent likelihood of cold
+		// dana - var resultText = document.getElementById("results"); // 
+		// dana - resultText.innerHTML = "Probability it is allergies =" + allergyPercent + "%<br> Probability it is a cold =" + coldPercent + "%"; 
 
+        };
+	
+ </script>
+<!-- dana - now were going into a new type of code, don't forget you still have to add an image and what not -->
 <style>	
 .body {
      margin: 0em;
@@ -86,19 +101,20 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <!--These lines of code format the page and include a title-->	
 <body>
 <div id="header" class="w3-container w3-flat-carrot">	
-	<h1>Cold or Allergies?</h1>
+	<h1>Covid or Flu?</h1>
+<!-- dana - made sure to ask my proper question -->
 <!--All of the div tags function to divide contents within the same page:-->
 </div>
 	
 <div id="content" class="w3-container">
-	<p> The COVID-19 epidemic has shaken the entire world with impacts on health, safety, and the economy. It is important to maintain social distancing as instructed by government officials. However, for essential workers and even for the general public it is important to properly diagnose COVID-19.Are you feeling like you might have symptoms of COVID-19? Answer a few short questions to find out if you should seek treatment or  an official test.!</p>
-	
+	<!-- dana - <p> The COVID-19 epidemic has shaken the entire world with impacts on health, safety, and the economy. It is important to maintain social distancing as instructed by government officials. However, for essential workers and even for the general public it is important to properly diagnose COVID-19.Are you feeling like you might have symptoms of COVID-19? Answer a few short questions to find out if you should seek treatment or  an official test.!</p> -->
+	<p> Are you feeling ill and afriad you might have Covid-19? What if it's just the flu? Answer a few short questions to find out!</p>
 	<a href="#one" class="w3-btn w3-orange"> Get Started </a> <!-- Creates an Orange Button that directs the user to the next page --> 
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION!</p>
-
+<!-- dana - so here I need to strategically ask my questions I'm thinking of doing covid-19 first then the flu -->
 <div class="page" id="one"> <!-- Creates the Layout for Page One of the Site-->
 	<div id="header" class="w3-container w3-flat-carrot"> <!-- Header Formatting-->
 		<h1>Question #1</h1> <!-- Header Title -->
