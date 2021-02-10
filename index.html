@@ -38,17 +38,17 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<script>
 // DANA'S COMMENT: i'm thinking that it will be var covidyes_count, and var covidno_count and define the functions that way OR it will be the FLU versus CORONA, I will have to find symtpoms that are not so close to each other in order to make that distinction 
 
-	var allergy_count = 0; // creates a variable known as allergy_count and stores the initial value as zero (tally of symptoms leaning towards allergy diagnosis)
-        var cold_count = 0; // creates a variable known as cold_count and stores the initial value as zero. (tally of symptoms leaning towards cold diagnosis)
+	var covid_count = 0; // creates a variable known as allergy_count and stores the initial value as zero (tally of symptoms leaning towards allergy diagnosis)
+        var flu_count = 0; // creates a variable known as cold_count and stores the initial value as zero. (tally of symptoms leaning towards cold diagnosis)
 	var resultText = document.getElementById("results"); // creates variable for our actual final result
 
-        function allergyAdd(){
-		allergy_count = allergy_count + 1; // this function will help us add one each time a symptom is linked to allergies.
+        function covidAdd(){
+		covid_count = covid_count + 1; // this function will help us add one each time a symptom is linked to allergies.
 		
         }
 // DANA'S COMMENT: i'm trying to come up with questions for my code - i'm thinking of doing the COVID-19 pandemic, answering 4 different types of questions - have to be able to distinguish between the flu and corona - which is hard because they are similar 
-        function coldAdd(){
-		cold_count = cold_count + 1; // this function will help us add one each time a symptom is linked to cold.
+        function fluAdd(){
+		flu_count = flu_count + 1; // this function will help us add one each time a symptom is linked to cold.
         }
 	var allergyPercent=0; // initial value for variable of allergy in  percentage form
 	var coldPercent=0; // initial value for variable of cold in  percentage form
